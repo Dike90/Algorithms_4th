@@ -1,5 +1,6 @@
 package Sort;
 
+import java.io.File;
 import java.io.FileReader;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -55,9 +56,10 @@ public class Selection {
     public static void  main(String [] args)
     {
         try {
-            FileReader fReader = new FileReader("E://IdeaProjects/Algorithms/src/algs4-data/largeW.txt");
+            File directory = new File("");
+            FileReader fReader = new FileReader(directory.getAbsolutePath()+"/algs4-data/8Kints.txt");
             Scanner sc = new Scanner(fReader);
-            Integer[] a = new Integer[1000000];
+            Integer[] a = new Integer[8000];
             int i = 0;
             while (sc.hasNextInt())
             {
