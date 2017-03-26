@@ -1,5 +1,6 @@
 package Sort;
 
+import java.io.File;
 import java.io.FileReader;
 import java.util.Scanner;
 
@@ -53,7 +54,9 @@ public class Insertion {
     public static void  main(String [] args)
     {
         try {
-            FileReader fReader = new FileReader("E://IdeaProjects/Algorithms/src/algs4-data/8Kints.txt");
+            File directory = new File("");
+            //System.out.println(directory.getAbsolutePath());
+            FileReader fReader = new FileReader(directory.getAbsolutePath()+"/algs4-data/8Kints.txt");
             Scanner sc = new Scanner(fReader);
             Integer[] a = new Integer[8000];
             int i = 0;
@@ -67,6 +70,7 @@ public class Insertion {
             long end = System.nanoTime();
             show(a);
             System.out.println((end - start)/ 1000000.0 + "ms");
+            System.out.println("isSorted: "+isSorted(a));
 
         }
         catch (Exception e)
